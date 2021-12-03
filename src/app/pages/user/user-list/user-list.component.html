@@ -1,0 +1,31 @@
+
+<d-data-table
+  [dataSource]="basicDataSource"
+  [scrollable]="true"
+  [tableLayout]="activeLayoutTab"
+>
+  <thead dTableHead>
+  <tr dTableRow>
+    <th dHeadCell>ID</th>
+    <th dHeadCell *ngFor="let colOption of dataTableOptions.columns">{{ colOption.header }}</th>
+    <th dHeadCell>Action</th>
+  </tr>
+  </thead>
+  <tbody dTableBody>
+  <ng-template let-rowItem="rowItem" let-rowIndex="rowIndex">
+    <tr dTableRow>
+      <td dTableCell>{{ rowItem.id}}</td>
+      <td dTableCell *ngFor="let colOption of dataTableOptions.columns">
+        {{ colOption.fieldType === 'date' ? (rowItem[colOption.field] ) : rowItem[colOption.field] }}
+      </td>
+      <td dTableCell >
+        <div class="btn-group">
+          <d-button *checkRole="['superadmin','vendor']" (click)="deleteRow(rowIndex)" icon="icon-delete" bsStyle="text-dark"  title="add"></d-button>
+          <d-button *checkRole="['vendor', 'customer']" (click)="edit(rowItem.id)" icon="icon-edit" bsStyle="text-dark"  title="Edit"></d-button>
+
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+  </tbody>
+</d-data-table>

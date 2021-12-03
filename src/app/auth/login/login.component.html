@@ -1,0 +1,45 @@
+<div style="background-image: url('assets/img/login.jpg'); object-fit: cover;background-repeat: no-repeat;    position: fixed;
+    width: 100%;  background-size: cover; height: 100vh; ">
+<div>
+  <d-card class="card-container" >
+    <d-card-header>
+
+      <d-card-title > <img [src]="logoSrc" width="26px" height="26px"/>Admin Code</d-card-title>
+
+    </d-card-header>
+    <d-card-content>
+      <div style="margin-left: 40px">
+        <form dForm [layout]="layoutDirection" ngForm>
+          <d-form-item>
+            <d-form-label [required]="true" [hasHelp]="true" [helpTips]="'Enter Username'">Username</d-form-label>
+            <d-form-control>
+              <div>
+                <input dTextInput autocomplete="off" name="userName" [(ngModel)]="user.username" />
+              </div>
+            </d-form-control>
+          </d-form-item>
+          <d-form-item>
+            <d-form-label [required]="true" [hasHelp]="true" [helpTips]="'Enter Password'">Password</d-form-label>
+            <d-form-control>
+              <div>
+                <input dTextInput type="password" [(ngModel)]="user.password" autocomplete="off" name="password" />
+              </div>
+            </d-form-control>
+          </d-form-item>
+
+
+          <d-form-operation>
+            <d-button (click)="onLoginSubmit()" bsStyle="primary" class="mr-element-spacing" circled="true" style="margin-right: 4px">Submit</d-button>
+            <!--          <d-button bsStyle="common" circled="true">Cancel</d-button>-->
+          </d-form-operation>
+        </form>
+      </div>
+    </d-card-content>
+
+  </d-card>
+
+</div>
+</div>
+
+
+

@@ -1,0 +1,16 @@
+.single-checkbox {
+  display: inline-block;
+  margin-right: 4px;
+}
+
+:host ::ng-deep .devui-radio-horizontal d-radio {
+  display: inline-block;
+}
+
+
+d-form-operation{
+  //float: right ;
+  //border: 1px solid #c0c0c014;
+  //background: #c0c0c014;
+  //padding: 10px 8px;
+}

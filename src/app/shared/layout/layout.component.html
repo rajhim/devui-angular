@@ -1,0 +1,49 @@
+<d-layout>
+  <d-header>
+    <div class="slide-menu-link" (click)="clickSlideMenu()">
+      <i class="icon icon-list-view"></i>
+    </div>
+    <!--      <ng-content select="d-header-logo"></ng-content>-->
+    <div class="logo">
+      <span class="logo-devui">
+        <img [src]="logoSrc" width="26px" height="26px"/>
+      </span>
+      <span class="text">Code Pro</span>
+    </div>
+    <div class="float-right" >
+      <div dDropDownToggle class="btn-group" dDropDown [trigger]="'hover'" (toggleEvent)="onToggle($event)" appendToBody>
+        <d-avatar  [name]="userValue"></d-avatar>
+        <span>{{userValue}}</span>
+        <ul dDropDownMenu class="devui-dropdown-menu devui-scrollbar" role="menu">
+
+          <li role="menuitem" ><a class="devui-dropdown-item">  <i class="icon icon-op-member" style="margin-right: 8px"></i>  Profile</a></li>
+          <li role="menuitem" (click)="logout()"><a class="devui-dropdown-item"><i class="icon icon-exit" style="margin-right: 8px"></i> Logout</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </d-header>
+  <d-layout>
+    <d-aside class="sidebar-wrapper">
+      <d-accordion (itemClick)="navigateUrl($event)" [restrictOneOpen]="true" [data]="menu" class="menu"></d-accordion>
+    </d-aside>
+    <d-content>
+      <d-breadcrumb>
+        <d-breadcrumb-item>
+          <span>Home</span>
+        </d-breadcrumb-item>
+        <d-breadcrumb-item *ngIf="routerData.header">
+          <span>{{routerData.header}}</span>
+        </d-breadcrumb-item>
+        <d-breadcrumb-item *ngIf="routerData.title">
+          <span>{{routerData.title}}</span>
+        </d-breadcrumb-item>
+      </d-breadcrumb>
+      <div class="inner-content">
+        <router-outlet  (activate)='onActivate(outlet)' #outlet="outlet"></router-outlet>
+      </div>
+    </d-content>
+  </d-layout>
+  <d-footer>footer</d-footer>
+</d-layout>

@@ -1,0 +1,23 @@
+@import '~ng-devui/styles-var/devui-var.scss';
+
+d-card {
+  cursor: pointer;
+  padding-bottom: 80px;
+  margin-bottom: 20px;
+  transition: box-shadow $devui-animation-duration-slow $devui-animation-ease-in-out-smooth,
+  transform $devui-animation-duration-slow $devui-animation-ease-in-out-smooth;
+
+  d-card-header {
+    margin: 0px 140px 40px;
+  }
+}
+
+
+.card-container {
+  width: 450px;
+  margin: 80px auto;
+  box-shadow: 1px 1px 19px -4px rgba(0,0,0,0.87);
+  -webkit-box-shadow: 1px 1px 19px -4px rgba(0,0,0,0.87);
+  -moz-box-shadow: 1px 1px 19px -4px rgba(0,0,0,0.87);
+  background: white;
+}

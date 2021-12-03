@@ -1,0 +1,42 @@
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-3">-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+
+
+
+
+        <form #f="ngForm" dForm [layout]="layoutDirection" ngForm>
+          <div class="row">
+          <div class="col-sm-4">
+          <d-form-item>
+            <d-form-label [required]="true" [hasHelp]="true" [helpTips]="'Enter Full Name'">Name</d-form-label>
+            <d-form-control>
+
+                <input dTextInput autocomplete="off" [(ngModel)]="userModel.name" name="userName" />
+
+            </d-form-control>
+          </d-form-item>
+          <d-form-item>
+            <d-form-label [required]="true">Role</d-form-label>
+            <d-form-control>
+              <d-select [options]="selectOptions" name="select1" [filterKey]="'label'" [(ngModel)]="userModel.role" ></d-select>
+            </d-form-control>
+          </d-form-item>
+          </div>
+          </div>
+          <div class="row footer">
+          <d-form-operation>
+            <d-button (click)="submitData()" bsStyle="primary" class="mr-element-spacing" circled="true" style="margin-right: 4px">Submit</d-button>
+            <d-button routerLink="users/list" bsStyle="common" circled="true">Cancel</d-button>
+          </d-form-operation>
+          </div>
+        </form>
+
+  </div>
+</div>
