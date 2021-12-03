@@ -1,5 +1,5 @@
 # Dev UI angular
-NGRX, DEVUI Component
+NGRX, DEVUI Component, CRUD without API(RXJS), AUTH(GUARD)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 
